@@ -7280,7 +7280,10 @@ only screen and (max-width:767px) {
 
 .comment-area .single-review {
     display: flex;
-    margin: 0 0 60px
+    padding: 10px;
+    align-items: center;
+    justify-content: start;
+    margin-top: 10px;
 }
 
 @media only screen and (max-width:767px) {
@@ -7289,10 +7292,10 @@ only screen and (max-width:767px) {
     }
 }
 
-.comment-area .single-review .review-img {
+/* .comment-area .single-review .review-img {
     flex: 0 0 90px;
     margin: 0 15px 0 0
-}
+} */
 
 .comment-area .single-review .review-img img {
     border-radius: 10px
@@ -7311,7 +7314,6 @@ only screen and (max-width:767px) {
 .comment-area .single-review .review-content .review-top-wrap {
     display: flex;
     justify-content: space-between;
-    margin: 0 0 20px;
     align-items: center
 }
 

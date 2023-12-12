@@ -124,4 +124,6 @@
 #imageZoom {
   height: 400px;
   object-fit: contain;
+  flex-wrap: wrap;
+  gap: 4px;
 }

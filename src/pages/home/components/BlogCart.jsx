@@ -1,7 +1,7 @@
+import moment from 'moment';
 import React from 'react';
 import { BiSolidLike } from 'react-icons/bi';
 import { FaArrowRight, FaCalendarAlt } from "react-icons/fa";
-import { IoChatboxEllipses } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 function BlogCart({data}) {
     return (
@@ -13,7 +13,7 @@ function BlogCart({data}) {
                 </div>
                 <div className="blog-text">
                     <div className="blog-athor-date">
-                        <a className="blog-date height-shape" href="#"><FaCalendarAlt /> 24 Aug, 2021</a>
+                        <a className="blog-date height-shape flex gap-3 items-center" href="#"><FaCalendarAlt /> {moment().format("DD MMMM YYYY")} </a>
                         <a className="blog-mosion flex gap-3 items-center" ><BiSolidLike /> 1.5
                             K</a>
                     </div>

@@ -6,7 +6,10 @@ import BlogComments from './BlogComments';
 
 
 function BlogContent({blog}) {
-    const [setComments, comments] = useState(blog.comments ? blog.comments : [])
+    
+    const [comments , setComments ] = useState(blog?.comments ? blog.comments : [])
+
+    console.log(comments)
   return (
     <div className="blog-grid pb-100px pt-100px main-blog-page single-blog-page">
         <div className="container">
@@ -105,7 +108,7 @@ function BlogContent({blog}) {
                     </div>
 
                     <BlogComments blog={blog} comments={comments} />
-                    <AddComment setComments={setComments} comments={setComments} blog={blog} />
+                    <AddComment setComments={setComments} comments={comments} blog={blog} />
                 </div>
             </div>
         </div>
