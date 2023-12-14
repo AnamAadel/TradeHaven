@@ -15,7 +15,6 @@ function Blogs() {
 
 
   useEffect(() => {
-    console.log("skip", pageNum, "limit", showProductsNum)
     
     axiosPublic.get(`/blogs?skip=${pageNum}&limit=${showProductsNum}`)
         .then(data =>{ 
