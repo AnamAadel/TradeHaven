@@ -3,10 +3,10 @@ import { FaAngleDown } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import { GoSearch } from "react-icons/go";
 import { IoIosHeartEmpty } from "react-icons/io";
+import { SlMenu } from "react-icons/sl";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../../context/AuthProvider";
 import { useGlobalContext } from "../../context/useGlobalContext";
-
 
 function NavBar() {
   const { setIsShowMenu, setIsShowCart, setIsShowWishlist, setIsShowSearchModal, setIsShowLogin, wishlist } = useAuth()
@@ -32,8 +32,8 @@ function NavBar() {
         <div className="container position-relative">
           <div className="row">
             <div className="col-auto align-self-center">
-              <div className="header-logo">
-                <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
+              <div className="header-logo h-[60px] w-[155px] overflow-hidden relative">
+                <a href="index.html"><img src="https://img.freepik.com/free-vector/technological-logo-design_1424-39.jpg?w=740&t=st=1702568928~exp=1702569528~hmac=27cd83ba28796c047a01a883150ffd5aedb9bfc9f6cdd294008f198e6fdc9d79" className="h-[260px] max-w-[262px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="Site Logo" /></a>
               </div>
             </div>
             <div className="col align-self-center d-none d-lg-block">
@@ -120,7 +120,7 @@ function NavBar() {
                 </a>
                 <a href="#offcanvas-mobile-menu" onClick={() => setIsShowMenu(true)}
                   className="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
-                  <i className="pe-7s-menu"></i>
+                  <SlMenu />
                 </a>
               </div>
             </div>

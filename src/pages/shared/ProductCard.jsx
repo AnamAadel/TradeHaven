@@ -7,7 +7,7 @@ function ProductCard({ item }) {
     const { addWishItem, wishlist } = useAuth();
     const isWish = wishlist.map(wishItem => wishItem.id).includes(item._id)
     return (
-        <div className="product shadow-2xl border rounded border-neutral p-6" style={{height: "fit-content"}}>
+        <div className="product shadow-2xl border rounded border-neutral p-6">
             <div className="thumb">
                 <Link to={`/product/${item._id}`} className="image">
                     <img src={item.image} alt="Product" />

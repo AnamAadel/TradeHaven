@@ -9,8 +9,8 @@ function Footer() {
                     <div className="row">
                         <div className="col-md-6 col-lg-3 mb-md-30px mb-lm-30px">
                             <div className="single-wedge">
-                                <div className="footer-logo">
-                                    <a href="index.html"><img src="assets/images/logo/logo-white.png" alt="" /></a>
+                                <div className="footer-logo w-[220px] h-[75px] overflow-hidden relative">
+                                    <a href="index.html"><img src="https://img.freepik.com/free-vector/technological-logo-design_1424-39.jpg?w=740&t=st=1702568928~exp=1702569528~hmac=27cd83ba28796c047a01a883150ffd5aedb9bfc9f6cdd294008f198e6fdc9d79" className='h-[196px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2' alt="" /></a>
                                 </div>
                                 <p className="about-text">Lorem ipsum dolor sit amet consectet adipisicing elit, sed do
                                     eiusmod templ incididunt ut labore et dolore magnaol aliqua Ut enim ad minim.
