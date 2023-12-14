@@ -32,7 +32,7 @@ import "./style/plugins.min.css";
 import "./style/style.min.css";
 import "./style/vendor.min.css";
 
- const axiosPublic = useAxiosPublic()
+const axiosPublic = useAxiosPublic()
 
 const router = createBrowserRouter([
   {
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/product/:id",
-        loader: ({params})=> axiosPublic(`/products/${params.id}`),
+        loader: ({ params }) => axiosPublic(`/products/${params.id}`),
         element: <SingleProduct />
       },
       {
@@ -83,7 +83,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blogs/:id",
-        loader: ({params})=> axiosPublic.get(`/blogs/${params.id}`),
+        loader: ({ params }) => axiosPublic.get(`/blogs/${params.id}`),
         element: <BlogSingle />
       },
       {
@@ -102,7 +102,7 @@ const router = createBrowserRouter([
         path: "/register",
         element: <SignUp />
       },
-    ], 
+    ],
   }
 ]);
 
@@ -112,12 +112,12 @@ const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-  <QueryClientProvider client={queryClient}>
-  <ContextProvider>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
-  </ContextProvider>
-  </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <ContextProvider>
+        <AuthProvider>
+          <RouterProvider router={router} />
+        </AuthProvider>
+      </ContextProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );
