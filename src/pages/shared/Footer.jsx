@@ -31,8 +31,7 @@ function Footer() {
                                         </a>
                                     </li>
                                     <li>
-                                        <a title="Instagram" href="#"><i className="fa fa-instagram" aria-hidden="true"></i>
-                                            
+                                        <a title="Instagram" href="#"><i className="fa fa-instagram" aria-hidden="true"></i>  
                                         </a>
                                     </li>
                                 </ul>
@@ -76,7 +75,7 @@ function Footer() {
                                 <div className="footer-links">
                                     <div className="footer-row">
                                         <ul className="align-items-center">
-                                            <li className="li"><a className="single-link" href="index.html">Jesco</a>
+                                            <li className="li"><a className="single-link" href="index.html">Trade haven</a>
                                             </li>
                                             <li className="li"><Link className="single-link" to="/shop" href="shop-left-sidebar.html">Shop</Link>
                                             </li>

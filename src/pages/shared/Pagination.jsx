@@ -1,31 +1,7 @@
-import { useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import useAxiosPublic from "../../hooks/useAxiosPablic";
-import useProducts from "../../hooks/useProducts";
 
-function Pagination({setPageNum,pageNum, setData, showProductsNum}) {
-    const {products , isPending} = useProducts()
-    const axiosPublic = useAxiosPublic();
-    console.log(showProductsNum)
-    const pagination = [...Array(Math.ceil(products.length / showProductsNum)).keys()];
-
-
-
-
-
-    useEffect(() => {
-        console.log("skip", pageNum, "limit", showProductsNum)
-        console.log(pageNum)
-        axiosPublic.get(`/products?skip=${pageNum}&limit=${showProductsNum}`)
-            .then(data =>{ 
-                setData(data.data)
-                console.log(data.data)
-            })
-    }, [pageNum, showProductsNum, axiosPublic, setData]);
-
-
-    
-    
+function Pagination({setPageNum,pageNum, showProductsNum, item}) {
+    const pagination = [...Array(Math.ceil(item.length / showProductsNum)).keys()];
 
     const handlePrev = (e) => {
         if(pageNum > 0){
@@ -43,7 +19,7 @@ function Pagination({setPageNum,pageNum, setData, showProductsNum}) {
     return (
         <div className="pro-pagination-style text-center mt-12" data-aos="fade-up" data-aos-delay="200">
             <div className="pages">
-                <ul className="flex items-center">
+                <ul className="flex items-center justify-center">
                     <li className="li"> 
                     <a className="page-link justify-center items-center" style={{display: "flex"}} onClick={handlePrev}>
                     <FaArrowLeft />
