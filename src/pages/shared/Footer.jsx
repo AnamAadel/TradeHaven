@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaHeart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -59,12 +61,10 @@ function Footer() {
                                 <div className="footer-links">
                                     <div className="footer-row">
                                         <ul className="align-items-center">
-                                            <li className="li"><a className="single-link" href="about.html"> About </a>
+                                            <li className="li"><Link className="single-link" to="/about"> About </Link>
                                             </li>
-                                            <li className="li"><a className="single-link" href="blog-grid.html">Blog</a></li>
-                                            <li className="li"><a className="single-link" href="#">Speakers</a></li>
-                                            <li className="li"><a className="single-link" href="contact.html">Contact</a></li>
-                                            <li className="li"><a className="single-link" href="#">Tricket</a></li>
+                                            <li className="li"><Link className="single-link" to="/blog">Blog</Link></li>
+                                            <li className="li"><Link className="single-link" to="/contact" >Contact</Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -78,12 +78,11 @@ function Footer() {
                                         <ul className="align-items-center">
                                             <li className="li"><a className="single-link" href="index.html">Jesco</a>
                                             </li>
-                                            <li className="li"><a className="single-link" href="shop-left-sidebar.html">Shop</a>
+                                            <li className="li"><Link className="single-link" to="/shop" href="shop-left-sidebar.html">Shop</Link>
                                             </li>
-                                            <li className="li"><a className="single-link" href="contact.html">Contact us</a>
+                                            <li className="li"><a className="single-link" to="/contact">Contact us</a>
                                             </li>
-                                            <li className="li"><a className="single-link" href="login.html">Log in</a></li>
-                                            <li className="li"><a className="single-link" href="#">Help</a></li>
+                                            <li className="li"><a className="single-link" to="/login" >Log in</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -98,7 +97,6 @@ function Footer() {
                                         896, Address 10010, HGJ</p>
                                     <p className="phone">Phone/Fax:<a href="tel:0123456789">0123456789</a></p>
                                     <p className="mail">Email:<a href="mailto:demo@example.com">demo@example.com</a></p>
-                                    <img src="assets/images/icons/payment.png" alt="" className="payment-img img-fulid" />
                                 </div>
                             </div>
                         </div>
@@ -109,8 +107,7 @@ function Footer() {
                 <div className="container">
                     <div className="row">
                         <div className="col-12 text-center">
-                            <p className="copy-text"> © 2021 <strong>Jesco</strong> Made With <i className="fa fa-heart"
-                                    aria-hidden="true"></i> By <a className="company-name" href="https://hasthemes.com/">
+                            <p className="copy-text"> © 2023 <strong>Trade Have</strong> Made With <FaHeart /> By <a className="company-name">
                                     <strong> HasThemes</strong></a>.</p>
                         </div>
                     </div>
