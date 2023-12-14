@@ -1,7 +1,9 @@
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-function Pagination({setPageNum,pageNum, showProductsNum, item}) {
-    const pagination = [...Array(Math.ceil(item.length / showProductsNum)).keys()];
+function Pagination({setPageNum, pageNum, showProductsNum, items}) {
+    const pagination = [...Array(Math.ceil(items.length / showProductsNum)).keys()];
+
+    console.log(items.length)
 
     const handlePrev = (e) => {
         if(pageNum > 0){
@@ -16,6 +18,8 @@ function Pagination({setPageNum,pageNum, showProductsNum, item}) {
 
         }
     }
+
+
     return (
         <div className="pro-pagination-style text-center mt-12" data-aos="fade-up" data-aos-delay="200">
             <div className="pages">

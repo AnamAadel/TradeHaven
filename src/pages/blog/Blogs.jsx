@@ -7,38 +7,19 @@ import Pagination from '../shared/Pagination'
 
 function Blogs() {
   const {blogData} = useBlog();
-  const [blog, setBlog] = useState([]);
+  const [blogs, setBlogs] = useState([]);
     const [pageNum, setPageNum] = useState(0);
     const [productData, setProductsData] = useState([]);
-    const [showProductsNum, setShowProductsNum] = useState(10);
+    const [showProductsNum, setShowProductsNum] = useState(6);
     const axiosPublic = useAxiosPublic();
-    const handlePage = (e) => {
-      console.log(e.target.value)
-      setShowProductsNum(parseInt(e.target.value))
-      setPageNum(0)
-  }
-
-  const handlePrev = (e) => {
-      if(pageNum > 0){
-          setPageNum(pageNum - 1)
-
-      }
-  }
-
-  const handleNext = (e) => {
-      if(pageNum < pagination.length - 1){
-          setPageNum(pageNum + 1)
-
-      }
-  }
 
 
   useEffect(() => {
     console.log("skip", pageNum, "limit", showProductsNum)
     
-    axiosPublic.get(`/blog?skip=${pageNum}&limit=${showProductsNum}`)
+    axiosPublic.get(`/blogs?skip=${pageNum}&limit=${showProductsNum}`)
         .then(data =>{ 
-          setBlog(data.data)
+          setBlogs(data.data)
         })
 }, [pageNum, showProductsNum, axiosPublic]);
 
@@ -48,12 +29,12 @@ function Blogs() {
        <div className="main-blog-area pb-100px pt-100px">
             <div className="container">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {blogData.map((blog, idx)=> (
+                {blogs.map((blog, idx)=> (
                     <BlogCart key={idx} data={blog} />
 
                 ))}  
                 </div>
-                <Pagination setPageNum={setPageNum} pageNum={pageNum} setData={setProductsData} showProductsNum={showProductsNum} item={blog} />
+                <Pagination setPageNum={setPageNum} pageNum={pageNum} setData={setProductsData} showProductsNum={showProductsNum} items={blogData} />
             </div>
         </div>
     </>
