@@ -25,7 +25,7 @@ function ProductGallery() {
     const Laborum = menu?.filter((item) => item.brand === "Laborum Adipisicing")
     const categoryArr = menu.map(item => item.brand)
     const categoryName = Array.from(new Set(categoryArr))
-    console.log(Apple.length)
+    
     console.log(menu)
 
     return (
