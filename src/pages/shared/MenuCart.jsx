@@ -3,7 +3,7 @@ import React from 'react'
 function MenuCart({item}) {
 
   return (
-    <div className="relative flex max-w-2xl p-6 flex-row items-start gap-4">
+    <div className="relative flex max-w-2xl p-6 flex-row gap-4">
                     <div className="w-28">
                         <img alt="" src={item?.image} className="object-cover w-full h-full rounded-full rounded-tl-none shadow" />
                     </div>
