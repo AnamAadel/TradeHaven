@@ -1,35 +1,37 @@
-import React from 'react'
+import { useState } from 'react';
+import { FaMinus, FaPlus } from 'react-icons/fa';
+import { Link, NavLink } from 'react-router-dom';
 import { useAuth } from '../../context/AuthProvider';
 
 function MobileMenu() {
-    const {isShowMenu, setIsShowMenu} = useAuth();
+    const { isShowMenu, setIsShowMenu } = useAuth();
+    const [openSubShop, setOpenSubShop] = useState()
     return (
-        <div id="offcanvas-mobile-menu" className={`offcanvas offcanvas-mobile-menu ${isShowMenu && "offcanvas-open"}`} style={{visibility: "visible"}}>
-            <button className="offcanvas-close" onClick={()=> setIsShowMenu(false)}></button>
+        <div id="offcanvas-mobile-menu" className={`offcanvas offcanvas-mobile-menu ${isShowMenu && "offcanvas-open"}`} style={{ visibility: "visible" }}>
+            <button className="offcanvas-close" onClick={() => setIsShowMenu(false)}></button>
 
             <div className="inner customScroll">
 
                 <div className="offcanvas-menu mb-4">
                     <ul>
                         <li><a href="#"><span className="menu-text">Home</span></a>
-                            <ul className="sub-menu">
-                                <li><a href="index.html"><span className="menu-text">Home 1</span></a></li>
-                                <li><a href="index-2.html"><span className="menu-text">Home 2</span></a></li>
-                            </ul>
+
                         </li>
-                        <li><a href="#"><span className="menu-text">Shop</span></a>
-                            <ul className="sub-menu">
+                        <li className='relative'>
+                            <Link to="/shop"><span className="menu-text">Shop Page</span></Link>
+                            <span onClick={() => setOpenSubShop(!openSubShop)} className='absolute top-[26px] right-4 cursor-pointer -translate-y-[50%]' >
+                                <FaPlus className={`text-xl  transition-all duration-500 absolute top-1/2 right-0 -translate-y-[50%] ${openSubShop ? "scale-0" : "scale-100"}`} />
+
+                                <FaMinus className={`text-xl  transition-all duration-500 absolute top-1/2 right-0 -translate-y-[50%] ${!openSubShop ? "scale-0" : "scale-100"}`} />
+                            </span>
+                            <ul className={`first-line:d-block  transition-all duration-500  overflow-hidden ${openSubShop ? "h-36" : "h-0 p-0"}`}>
+                                <li><NavLink to="/shop" >Shop</NavLink></li>
+                                <li><NavLink to="/shop_4_column" >Shop 4 Column</NavLink></li>
+                                <li><NavLink to="/shop_left" >Shop Left Sidebar</NavLink></li>
+                            </ul>
+                            {/* <ul className="sub-menu">
                                 <li>
-                                    <a href="#"><span className="menu-text">Shop Page</span></a>
-                                    <ul className="sub-menu">
-                                        <li className="title"><a href="#">Shop Page</a></li>
-                                        <li><a href="shop-3-column.html">Shop 3 Column</a></li>
-                                        <li><a href="shop-4-column.html">Shop 4 Column</a></li>
-                                        <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
-                                        <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                                        <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a></li>
-                                        <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a></li>
-                                    </ul>
+                                    
                                 </li>
                                 <li>
                                     <a href="#"><span className="menu-text">product Details Page</span></a>
@@ -75,7 +77,7 @@ function MobileMenu() {
                                         <li><a href="coming-soon.html">Coming Soon Page</a></li>
                                     </ul>
                                 </li>
-                            </ul>
+                            </ul> */}
                         </li>
                         <li><a href="#"><span className="menu-text">Blog</span></a>
                             <ul className="sub-menu" >

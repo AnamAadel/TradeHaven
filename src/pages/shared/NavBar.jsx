@@ -33,7 +33,7 @@ function NavBar() {
           <div className="row">
             <div className="col-auto align-self-center">
               <div className="header-logo h-[60px] w-[155px] overflow-hidden relative">
-                <a href="index.html"><img src="https://img.freepik.com/free-vector/technological-logo-design_1424-39.jpg?w=740&t=st=1702568928~exp=1702569528~hmac=27cd83ba28796c047a01a883150ffd5aedb9bfc9f6cdd294008f198e6fdc9d79" className="h-[260px] max-w-[262px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="Site Logo" /></a>
+                <Link to="/" ><img src="https://img.freepik.com/free-vector/technological-logo-design_1424-39.jpg?w=740&t=st=1702568928~exp=1702569528~hmac=27cd83ba28796c047a01a883150ffd5aedb9bfc9f6cdd294008f198e6fdc9d79" className="h-[260px] max-w-[262px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="Site Logo" /></Link>
               </div>
             </div>
             <div className="col align-self-center d-none d-lg-block">
@@ -101,7 +101,7 @@ function NavBar() {
                 </ul>
               </div>
             </div>
-            <div className="col col-lg-auto align-self-center pl-0">
+            <div className="col col-lg-auto align-self-center pl-0 items-center">
               <div className="header-actions">
                 <a onClick={() => setIsShowLogin(true)} className="header-action-btn login-btn" data-bs-toggle="modal"
                   data-bs-target="#loginActive">Sign In</a>
@@ -119,7 +119,7 @@ function NavBar() {
                   
                 </a>
                 <a href="#offcanvas-mobile-menu" onClick={() => setIsShowMenu(true)}
-                  className="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
+                  className="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none text-3xl">
                   <SlMenu />
                 </a>
               </div>
