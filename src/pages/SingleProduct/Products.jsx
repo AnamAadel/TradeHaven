@@ -13,6 +13,7 @@ function Products() {
     const [productData, setProductsData] = useState([]);
     const [showProductsNum, setShowProductsNum] = useState(10);
     const axiosPublic = useAxiosPublic();
+
     useEffect(() => {
         axiosPublic(`/products?skip=${pageNum}&limit=${showProductsNum}`)
             .then(res => setProductsData(res.data))
